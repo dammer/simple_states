@@ -41,7 +41,7 @@ module SimpleStates
 
       def ordered?(obj, data)
         states = obj.class.states
-        states.index(obj.state).to_i <= states.index(target_state(data)).to_i
+        states.key(obj.state).to_i <= states.key(target_state(data)).to_i
       end
 
       def applies?(obj, data)
