@@ -46,6 +46,8 @@ module SimpleStates
   def state
     state = super
     state.to_sym if state
+  rescue ActiveModel::MissingAttributeError
+    nil
   end
 
   def state?(state)
